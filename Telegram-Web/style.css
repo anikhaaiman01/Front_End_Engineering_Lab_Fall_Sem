@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.telegram {
+    display: flex;
+    height: 100vh;
+}
+.sidebar {
+    width: 30%;
+    border-right: 1px solid black;
+    padding: 20px;
+}
+.sidebar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.chat-item {
+    padding: 15px 5px;
+    border-bottom: 1px solid black;
+}
+.chat {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.chat-header {
+    padding: 15px;
+    border-bottom: 1px solid black;
+}
+.chat-header h2,
+.chat-header p {
+    margin: 5px 0;
+}
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    border: 1px solid black;
+}
+.sent {
+    margin-left: auto;
+}
+.message-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid black;
+}
+.message-input input {
+    flex: 1;
+    padding: 10px;
+}
+.message-input button {
+    padding: 10px 20px;
+}
