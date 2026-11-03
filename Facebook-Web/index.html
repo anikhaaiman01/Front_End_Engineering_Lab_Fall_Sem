@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -12,124 +11,241 @@
 
 <div class="facebook-page">
 
-```
-<header class="navbar">
+    <header class="navbar">
 
-    <h1>Facebook</h1>
+        <h1>Facebook</h1>
 
-    <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search">
 
-    <nav class="navigation">
-        <a href="#">Home</a>
-        <a href="#">Profile</a>
-        <a href="#">Logout</a>
-    </nav>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#connect">Connect</a>
+            <a href="#">Logout</a>
+        </nav>
 
-</header>
+    </header>
 
-<main class="main-content">
+    <main class="main-content">
 
-    <aside class="left-sidebar">
+        <aside class="left-sidebar">
 
-        <h2>Your Profile</h2>
+            <h2>Your Profile</h2>
 
-        <div class="profile">
-            <div class="profile-circle"></div>
-            <h2>John Doe</h2>
-        </div>
+            <div class="profile">
+                <div class="profile-circle"></div>
+                <h2>John Doe</h2>
+            </div>
 
-        <p>John Doe</p>
+            <p>John Doe</p>
 
-        <hr>
+            <hr>
 
-        <h3>Menu</h3>
+            <h3>Menu</h3>
 
-        <ul>
-            <li>News Feed</li>
-            <li>Messages</li>
-            <li>Friends</li>
-            <li>Groups</li>
-            <li>Saved</li>
-        </ul>
+            <ul>
+                <li>News Feed</li>
+                <li>Messages</li>
+                <li>Friends</li>
+                <li>Groups</li>
+                <li>Saved</li>
+            </ul>
 
-    </aside>
+        </aside>
 
-    <section class="feed">
+        <section class="feed">
 
-        <h2>News Feed</h2>
+            <h2>News Feed</h2>
 
-        <section class="create-post">
+            <section class="create-post">
 
-            <div class="post-figure"></div>
+                <div class="post-figure"></div>
 
-            <h3>Create Post</h3>
+                <h3>Create Post</h3>
 
-            <textarea placeholder="What's on your mind?"></textarea>
+                <textarea placeholder="What's on your mind?"></textarea>
 
-            <button>Post</button>
+                <button>Post</button>
+
+            </section>
+
+            <article class="post">
+
+                <div class="post-figure square"></div>
+
+                <h3>John Doe</h3>
+
+                <p>Having a great day with friends!</p>
+
+                <hr>
+
+                <button>Like</button>
+                <button>Comment</button>
+                <button>Share</button>
+
+            </article>
+
+            <article class="post">
+
+                <div class="post-figure small"></div>
+
+                <h3>Sarah</h3>
+
+                <p>Beautiful weather today!</p>
+
+                <hr>
+
+                <button>Like</button>
+                <button>Comment</button>
+                <button>Share</button>
+
+            </article>
+
+            <!-- Experiment 3: HTML Form -->
+
+            <section class="profile-form-section" id="connect">
+
+                <h2>Get to Know Me</h2>
+
+                <p>Fill in your details to connect with friends.</p>
+
+                <form>
+
+                    <fieldset>
+
+                        <legend>Personal Information</legend>
+
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname"
+                               placeholder="Enter your full name" required>
+
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob">
+
+                        <label>Gender:</label>
+
+                        <div class="form-options">
+
+                            <input type="radio" id="male" name="gender" value="Male">
+                            <label for="male">Male</label>
+
+                            <input type="radio" id="female" name="gender" value="Female">
+                            <label for="female">Female</label>
+
+                            <input type="radio" id="other" name="gender" value="Other">
+                            <label for="other">Other</label>
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+
+                        <legend>Contact Information</legend>
+
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Enter your email" required>
+
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="Enter your phone number">
+
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city"
+                               placeholder="Enter your city">
+
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address"
+                                  placeholder="Enter your address"></textarea>
+
+                    </fieldset>
+
+                    <fieldset>
+
+                        <legend>Interests</legend>
+
+                        <p>Select your interests:</p>
+
+                        <div class="form-options">
+
+                            <input type="checkbox" id="music" name="interests" value="Music">
+                            <label for="music">Music</label>
+
+                            <input type="checkbox" id="sports" name="interests" value="Sports">
+                            <label for="sports">Sports</label>
+
+                            <input type="checkbox" id="technology" name="interests" value="Technology">
+                            <label for="technology">Technology</label>
+
+                            <input type="checkbox" id="travel" name="interests" value="Travel">
+                            <label for="travel">Travel</label>
+
+                            <input type="checkbox" id="reading" name="interests" value="Reading">
+                            <label for="reading">Reading</label>
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset>
+
+                        <legend>Academic / Professional Details</legend>
+
+                        <label for="qualification">Current Qualification:</label>
+
+                        <select id="qualification" name="qualification">
+                            <option value="">Select Qualification</option>
+                            <option>School Student</option>
+                            <option>Undergraduate</option>
+                            <option>Postgraduate</option>
+                            <option>Working Professional</option>
+                        </select>
+
+                        <label for="institution">College / Organization:</label>
+                        <input type="text" id="institution" name="institution"
+                               placeholder="Enter college or organization">
+
+                        <label for="about">About Me:</label>
+                        <textarea id="about" name="about"
+                                  placeholder="Write something about yourself"></textarea>
+
+                    </fieldset>
+
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+
+                </form>
+
+            </section>
 
         </section>
 
-        <article class="post">
+        <aside class="right-sidebar">
 
-            <div class="post-figure square"></div>
+            <h2>Friends</h2>
 
-            <h3>John Doe</h3>
-
-            <p>Having a great day with friends!</p>
-
-            <hr>
-
-            <button>Like</button>
-            <button>Comment</button>
-            <button>Share</button>
-
-        </article>
-
-        <article class="post">
-
-            <div class="post-figure small"></div>
-
-            <h3>Sarah</h3>
-
-            <p>Beautiful weather today!</p>
+            <ul>
+                <li>John</li>
+                <li>Sarah</li>
+                <li>Alex</li>
+                <li>David</li>
+            </ul>
 
             <hr>
 
-            <button>Like</button>
-            <button>Comment</button>
-            <button>Share</button>
+            <h3>Suggestions</h3>
 
-        </article>
+            <p>Michael</p>
+            <p>Emma</p>
 
-    </section>
+        </aside>
 
-    <aside class="right-sidebar">
+    </main>
 
-        <h2>Friends</h2>
-
-        <ul>
-            <li>John</li>
-            <li>Sarah</li>
-            <li>Alex</li>
-            <li>David</li>
-        </ul>
-
-        <hr>
-
-        <h3>Suggestions</h3>
-
-        <p>Michael</p>
-        <p>Emma</p>
-
-    </aside>
-
-</main>
-
-<footer>
-    <p>Facebook Personal Webpage | 2026</p>
-</footer>
-```
+    <footer>
+        <p>Facebook Personal Webpage | 2026</p>
+    </footer>
 
 </div>
 

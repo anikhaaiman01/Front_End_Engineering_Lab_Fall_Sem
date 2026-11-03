@@ -104,3 +104,69 @@ footer {
 text-align: center;
 padding: 10px;
 }
+/* Experiment 3: HTML Form */
+
+.profile-form-section {
+    border: 1px solid black;
+    padding: 20px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.profile-form-section h2 {
+    text-align: center;
+}
+
+.profile-form-section > p {
+    text-align: center;
+}
+
+.profile-form-section fieldset {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+.profile-form-section legend {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.profile-form-section label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.profile-form-section input[type="text"],
+.profile-form-section input[type="email"],
+.profile-form-section input[type="tel"],
+.profile-form-section input[type="date"],
+.profile-form-section select,
+.profile-form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.profile-form-section textarea {
+    height: 70px;
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.form-options label {
+    margin: 0 10px 0 0;
+}
+
+.profile-form-section button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
