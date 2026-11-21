@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Main Container */
+
+        .component-container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            background-color: #111827;
+            padding: 25px;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        /* Album Section */
+
+        .album-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .album-cover {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1e293b, #0891b2);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vinyl {
+            width: 110px;
+            height: 110px;
+            background: repeating-radial-gradient(
+                circle,
+                #111 0px,
+                #222 3px,
+                #111 6px
+            );
+            border-radius: 50%;
+            border: 5px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: spin 5s linear infinite;
+        }
+
+        .vinyl::after {
+            content: "";
+            width: 25px;
+            height: 25px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .album-info h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .album-info p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Progress Bar */
+
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background-color: #334155;
+            border-radius: 10px;
+        }
+
+        .progress {
+            width: 45%;
+            height: 5px;
+            background-color: #38bdf8;
+            border-radius: 10px;
+        }
+
+        /* Playback Controls */
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .controls button {
+            border: none;
+            background-color: #334155;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .controls button:hover {
+            background-color: #0ea5e9;
+        }
+
+        .controls button:active {
+            transform: scale(0.9);
+        }
+
+        .controls .play {
+            background-color: #38bdf8;
+            color: #0f172a;
+            width: 48px;
+            height: 48px;
+        }
+
+        /* Playlist Section */
+
+        .playlist-section h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .track {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e293b;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease,
+                        background-color 0.3s ease;
+        }
+
+        .track:hover {
+            transform: translateX(6px);
+            background-color: #334155;
+        }
+
+        .track-info h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .track-info p {
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        .duration {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .play-btn {
+            background-color: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 7px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        /* Desktop Layout */
+
+        @media (min-width: 768px) {
+
+            .component-container {
+                grid-template-columns: 200px 1fr;
+                gap: 30px;
+            }
+
+            .album-cover {
+                height: 200px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="component-container">
+
+        <!-- Album Section -->
+
+        <section class="album-section">
+
+            <div class="album-cover">
+                <div class="vinyl"></div>
+            </div>
+
+            <div class="album-info">
+                <h2>Midnight Echoes</h2>
+                <p>Cyber Wave • 2026</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+
+            <div class="controls">
+                <button>⏮</button>
+                <button class="play">▶</button>
+                <button>⏭</button>
+            </div>
+
+        </section>
+
+        <!-- Playlist Section -->
+
+        <section class="playlist-section">
+
+            <h3>Up Next</h3>
+
+            <div class="track">
+                <div class="track-info">
+                    <h4>01. Neon Route</h4>
+                    <p>Cyber Wave</p>
+                </div>
+                <button class="play-btn">PLAY</button>
+                <span class="duration">3:42</span>
+            </div>
+
+            <div class="track">
+                <div class="track-info">
+                    <h4>02. Silicon Drift</h4>
+                    <p>Cyber Wave</p>
+                </div>
+                <span class="duration">4:15</span>
+            </div>
+
+            <div class="track">
+                <div class="track-info">
+                    <h4>03. Digital Rain</h4>
+                    <p>Cyber Wave</p>
+                </div>
+                <span class="duration">2:58</span>
+            </div>
+
+            <div class="track">
+                <div class="track-info">
+                    <h4>04. Night Ride</h4>
+                    <p>Cyber Wave</p>
+                </div>
+                <span class="duration">3:10</span>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

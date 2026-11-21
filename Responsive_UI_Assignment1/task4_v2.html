@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatorSpace Profile</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f3ff;
+            color: #1e1b4b;
+            padding: 25px 15px;
+        }
+
+        .component-container {
+            width: 100%;
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(76,29,149,0.08);
+        }
+
+        .brand {
+            color: #7c3aed;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        /* Profile Header */
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        /* Avatar */
+
+        .avatar {
+            width: 125px;
+            height: 125px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            border: 5px solid #ede9fe;
+            box-shadow: 0 5px 20px rgba(124,58,237,0.2);
+            transition: transform 0.25s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        /* Profile Details */
+
+        .profile-details {
+            width: 100%;
+        }
+
+        .username-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .username {
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+
+        .verified {
+            color: #7c3aed;
+        }
+
+        .profession {
+            color: #8b5cf6;
+            font-size: 14px;
+        }
+
+        .bio {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #64748b;
+            margin: 15px 0;
+        }
+
+        .portfolio {
+            display: inline-block;
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* Statistics */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: #f5f3ff;
+            border-radius: 15px;
+            padding: 18px 5px;
+            margin: 20px 0;
+            gap: 5px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 20px;
+            margin-bottom: 6px;
+            color: #5b21b6;
+        }
+
+        .stat-box p {
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .buttons button {
+            flex: 1;
+            padding: 13px;
+            border-radius: 9px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: transform 0.25s ease,
+                        background 0.25s ease;
+        }
+
+        .follow {
+            background: #7c3aed;
+            color: white;
+        }
+
+        .message {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .buttons button:hover {
+            opacity: 0.85;
+        }
+
+        .buttons button:active {
+            transform: scale(0.96);
+        }
+
+        /* Story Highlights */
+
+        .highlights {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #ede9fe;
+        }
+
+        .highlight-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .highlight-heading h3 {
+            font-size: 17px;
+        }
+
+        .highlight-heading a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .story-list {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding-bottom: 12px;
+        }
+
+        .story {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+            flex-shrink: 0;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .story-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ddd6fe, #8b5cf6);
+            border: 4px solid #f5f3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 22px;
+        }
+
+        .story-circle:hover {
+            background: linear-gradient(135deg, #a78bfa, #6d28d9);
+        }
+
+        /* Desktop Layout */
+
+        @media (min-width: 768px) {
+
+            .component-container {
+                padding: 35px;
+            }
+
+            .profile-header {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                gap: 35px;
+            }
+
+            .avatar {
+                width: 145px;
+                height: 145px;
+            }
+
+            .profile-details {
+                flex: 1;
+            }
+
+            .username-row {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .username-row .buttons {
+                max-width: 250px;
+            }
+
+            .buttons {
+                max-width: 320px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="component-container">
+
+        <div class="brand">
+            CREATORSPACE
+        </div>
+
+        <!-- Profile Header -->
+
+        <section class="profile-header">
+
+            <div class="avatar">
+                OB
+            </div>
+
+            <div class="profile-details">
+
+                <div class="username-row">
+
+                    <div>
+                        <h2 class="username">
+                            olivia.bennett
+                            <span class="verified">✦</span>
+                        </h2>
+
+                        <p class="profession">
+                            Digital Creator • UI Designer
+                        </p>
+                    </div>
+
+                    <div class="buttons">
+
+                        <button class="follow">
+                            Follow
+                        </button>
+
+                        <button class="message">
+                            Message
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat-box">
+                        <h3>236</h3>
+                        <p>Posts</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>18.6k</h3>
+                        <p>Followers</p>
+                    </div>
+
+                    <div class="stat-box">
+                        <h3>685</h3>
+                        <p>Following</p>
+                    </div>
+
+                </div>
+
+                <p class="bio">
+                    Creating digital experiences through design and creativity.
+                    Sharing inspiration, design tips and creative projects.
+                </p>
+
+                <a href="#" class="portfolio">
+                    www.oliviabennett.design ↗
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Story Highlights -->
+
+        <section class="highlights">
+
+            <div class="highlight-heading">
+
+                <h3>My Highlights</h3>
+
+                <a href="#">Explore All →</a>
+
+            </div>
+
+            <div class="story-list">
+
+                <div class="story">
+                    <div class="story-circle">✦</div>
+                    <p>Design</p>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">◈</div>
+                    <p>Creative</p>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">✧</div>
+                    <p>Projects</p>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">♡</div>
+                    <p>Travel</p>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">✿</div>
+                    <p>Daily Life</p>
+                </div>
+
+                <div class="story">
+                    <div class="story-circle">+</div>
+                    <p>More</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
